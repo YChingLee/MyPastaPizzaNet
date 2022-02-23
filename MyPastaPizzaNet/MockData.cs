@@ -19,5 +19,116 @@ namespace MyPastaPizzaNet
         public static Dessert IceCream = new Dessert(DessertOption.IceCream, 3);
         public static Dessert Tiramisu = new Dessert(DessertOption.Tiramisu, 3);
         public static Dessert Cake = new Dessert(DessertOption.Cake, 2);
+
+        public static Customer JanJanssen = new Customer(1, "Jan Janssen");
+        public static Customer PietPeters = new Customer(2, "Piet Peters");
+
+        public static List<Order> Orders = new List<Order>
+        {
+            new Order
+                    {
+                        Id = 1,
+                        Customer = JanJanssen,
+                        Choices = new List<IChoice>
+                        {
+                            new MainCourse(PizzaMargherita)
+                            {
+                                Size = Size.Large,
+                                Supplements = new List<Supplement>
+                                {
+                                    Supplement.Cheese, Supplement.Garlic
+                                }
+                            },
+                            Water,
+                            IceCream
+                        },
+                        Quantity = 2
+                    },
+            new Order
+                    {
+                        Id =2,
+                        Customer = PietPeters,
+                        Choices = new List<IChoice>
+                        {
+                            new MainCourse(PizzaMargherita),
+                            Water,
+                            Tiramisu
+                        }
+                    },
+            new Order
+                    {
+                        Id =3,
+                        Customer = PietPeters,
+                        Choices = new List<IChoice>
+                        {
+                            new MainCourse(PizzaNapoli)
+                            {
+                                Size = Size.Large
+                            },
+                            Tea,
+                            IceCream
+                        },
+                    },
+            new Order
+                    {
+                        Id = 4,
+                        Choices = new List<IChoice>
+                        {
+                            new MainCourse(Lasagne)
+                            {
+                                Supplements = new List<Supplement>
+                                {
+                                    Supplement.Garlic,
+                                }
+                            }
+                        }
+                    },
+            new Order
+                    {
+                        Id = 5,
+                        Customer = JanJanssen,
+                        Choices = new List<IChoice>
+                        {
+                            new MainCourse(SpaghettiCarbonara),
+                            Coke,
+                        }
+                    },
+            new Order
+                    {
+                        Id = 6,
+                        Customer = PietPeters,
+                        Choices = new List<IChoice>
+                        {
+                            new MainCourse(SpaghettiBolognese)
+                            {
+                                Size = Size.Large,
+                                Supplements = new List<Supplement>
+                                {
+                                    Supplement.Cheese,
+                                }
+                            },
+                            Cake
+                        }
+                    },
+            new Order
+                    {
+                        Id = 7,
+                        Customer = PietPeters,
+                        Choices = new List<IChoice>
+                        {
+                            Coffee,
+                        },
+                        Quantity = 3
+                    },
+            new Order
+                    {
+                        Id = 8,
+                        Customer = JanJanssen,
+                        Choices = new List<IChoice>
+                        {
+                            Tiramisu,
+                        }
+                    }
+        };
     }
 }
