@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace MyPastaPizzaNet
 {
-    public class OrderDaoStub : IDao
+    public class OrderDaoStub : IOrderDao
     {
         public List<Order> Fetch()
         {
@@ -15,6 +15,5 @@ namespace MyPastaPizzaNet
         {
             MockData.Orders.Add(order);
         }
-
     }
 }

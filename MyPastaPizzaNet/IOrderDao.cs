@@ -2,7 +2,7 @@
 
 namespace MyPastaPizzaNet
 {
-    public interface IDao
+    public interface IOrderDao
     {
         List<Order> Fetch();
         void Add(Order order);

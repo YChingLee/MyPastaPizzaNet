@@ -8,9 +8,9 @@ namespace MyPastaPizzaNet
 {
     public class OrderService
     {
-        private readonly IDao db;
+        private readonly IOrderDao db;
 
-        public OrderService(IDao db) => this.db = db;
+        public OrderService(IOrderDao db) => this.db = db;
 
         public IEnumerable<Order> GetOrders()
         {
@@ -23,10 +23,6 @@ namespace MyPastaPizzaNet
         {
             var query = GetOrders()
                 .Where(o => o.Customer.Name == customer.Name);
-
-            if (query.Count() == 0)
-                throw new Exception($"Orders are not found for customer {customer.Name}.");
-
             return query;
         }
 
